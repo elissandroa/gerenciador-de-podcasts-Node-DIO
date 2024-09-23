@@ -1,5 +1,6 @@
 import * as http from 'http';
 import { getFilterEpisodes, getListEpisodes } from './controllers/podcastsController';
+import { Routes } from './routes/routes';
 
 const port = process.env.PORT;
 
@@ -8,15 +9,12 @@ const server = http.createServer(
 
         /* QueryString */
         const [baseUrl, queryString] = req.url?.split('?') ?? ["", ""]
-        console.log(baseUrl)
-        console.log(queryString)
 
-
-        if(req.method === "GET" && baseUrl === "/api/list"){
+        if(req.method === "GET" && baseUrl === Routes.LIST){
            await getListEpisodes(req, res);
         }
 
-        if(req.method === "GET" && baseUrl === "/api/episode"){
+        if(req.method === "GET" && baseUrl === Routes.EPISODE){
           await getFilterEpisodes(req, res);
         }
     })
