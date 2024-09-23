@@ -13,4 +13,4 @@ export const repositoryPodcast = async (podcastName?:string):Promise<PodcastMode
         jsonFile = jsonFile.filter((podcast:PodcastModel) => podcast.podcastName === podcastName)
     }
     return jsonFile
-}gi
+}
