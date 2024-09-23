@@ -1,7 +1,6 @@
 import { IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
 import { serviceListEpisodes } from '../services/listEpisodesService';
 import { serviceFilterEpisodes } from '../services/filterEpisodesService';
-import { StatusCode } from '../utils/httpStatusCode';
 import { ContentType } from '../utils/contentType';
 import { PodcastTransferModel } from '../models/filterPodcastModel';
 
