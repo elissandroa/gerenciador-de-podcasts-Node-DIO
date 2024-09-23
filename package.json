@@ -2,14 +2,14 @@
   "name": "gerenciador-de-podcasts",
   "version": "1.0.0",
   "main": "index.js",
-    "directories": {
+  "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start:dev": "tsx src/server.ts",
-    "start:watch": "tsx watch src/server.ts",
+    "start:dev": "tsx --env-file=.env src/server.ts",
+    "start:watch": "tsx --env-file=.env watch src/server.ts",
     "dist": "tsup src",
-    "start:dist": "npm run dist && node dist/server.js"
+    "start:dist": "npm run dist && node --env-file=.env dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +19,8 @@
     "tsup": "^8.3.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/node": "^22.5.5"
   }
 }
